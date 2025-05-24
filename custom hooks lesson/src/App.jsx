@@ -3,8 +3,6 @@ import { NewTodoForm } from "./components/newTodoForm/newTodoForm.jsx";
 import "./App.css"
 
 function App() {
-
-
     return (
         <div>
             <h1>My Custom Hooks App</h1>
@@ -14,5 +12,4 @@ function App() {
         </div>
     )
 }
-
 export default App

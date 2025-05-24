@@ -3,14 +3,10 @@ import { useState } from "react";
 export function useNewTodoCreating(title, completed) {
     const [isLoading, setIsLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState("");
-
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsLoading(true);
         setSuccessMessage("");
-
-
         try {
             const response = await fetch("https://jsonplaceholder.typicode.com/todos", {
                 method: "POST",
@@ -20,7 +16,6 @@ export function useNewTodoCreating(title, completed) {
                     completed,
                 }),
             });
-
             const data = await response.json();
             setSuccessMessage(`Todo with id ${data.id} created`);
         } catch (error) {
@@ -29,7 +24,6 @@ export function useNewTodoCreating(title, completed) {
             setIsLoading(false);
         }
     };
-
     return {
         handleSubmit,
         isLoading,
